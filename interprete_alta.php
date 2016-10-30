@@ -7,13 +7,38 @@
 </head>
 <body>
 	<body>
-	<div id="wrapper" align="center">
-	<div id="content" class="row">
-        	<section>
-        		<a style="text-decoration:none;" href="index.php">
-                    <div id="cabeceraB" class="header">Tienda de Discos</div>
-                </a>
-        	</section><br>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+              </div>
+            			<!-- /.navbar-collapse -->
+            	</div>
+            	<!-- /.container -->
+            </nav>
+
+          <br><br><br><br><br><br>
 <?php
 
 include 'menu.php';
@@ -25,7 +50,7 @@ if(isset($_POST['subir']))
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];
 	$folder="uploads/";
-	$rights=$_POST['Categoria'];
+	$rights=$_POST['categoria'];
 	$autor = $_POST['autor'];
 	$ubicacion = $_POST['ubicacion'];
 	$lugar = $_POST['lugar'];
@@ -48,7 +73,7 @@ if(isset($_POST['subir']))
 		mysql_query($sql);
 		?>
 		<script>
-		alert('successfully uploaded file');
+		alert('Archivo subido con exito!');
 
         </script>
 		<?php
@@ -80,12 +105,12 @@ echo '<td>Titulo del archivo</td><td><input type="text" class="form-control" id=
 echo '</tr>';
 echo '<tr>';
 echo '<td> Categoría</td>';
-echo '<td><select class="form-control" id="categoria">';
-echo    '<option>1</option>';
+echo '<td><select class="form-control" name="categoria"> ';
+echo    '<option>VOlvo</option>';
 echo    '<option>2</option>';
 echo    '<option>3</option>';
 echo    '<option>4</option>';
-echo  ' </select>';
+echo  '</select>';
 echo '</td>';
 echo '</tr>';
 echo '<tr>';
@@ -101,9 +126,14 @@ echo '<tr>';
 echo '<td>Páginas</td><td><input type="text" class="form-control" id="pagina" name="pagina"></td>';
 echo '</tr>';
 echo '<td>';
-echo '<span class="btn btn-default btn-file">';
-echo 'Buscar archivo	 <input type="file" name="file">';
-echo '</span></td >';
+
+echo '
+<div class="fileUpload btn btn-success">
+    <span>Upload</span>
+    <input id="uploadBtn" type="file" class="upload" name="file" />
+</div>';
+echo '<td><input id="uploadFile" class="form-control" placeholder="Archivo elegido" disabled="disabled" /></td>';
+echo '</td >';
 echo '<tr>';
 echo '<td colspan="2"><input class="btn btn-primary" value="Subir!" type="submit" name="subir"></td>';
 echo '</tr>';
@@ -115,6 +145,10 @@ echo '</form>';
 <br>
 	</div>
 </div>
+
+<script> document.getElementById("uploadBtn").onchange = function () {
+    document.getElementById("uploadFile").value = this.value;
+};</script>
 
 
 </body>

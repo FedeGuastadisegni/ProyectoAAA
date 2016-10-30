@@ -7,23 +7,55 @@
 </head>
 <body>
      <body>
-     <div id="wrapper" align="center">
-     <div id="content" class="row">
-          <section>
-               <a style="text-decoration:none;" href="index.php">
-                    <div id="cabeceraB" class="header">Tienda de Discos</div>
-                </a>
-          </section><br>
+			 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		         <div class="container">
+		             <!-- Brand and toggle get grouped for better mobile display -->
+		             <div class="navbar-header">
+		                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		                     <span class="sr-only">Toggle navigation</span>
+		                     <span class="icon-bar"></span>
+		                     <span class="icon-bar"></span>
+		                     <span class="icon-bar"></span>
+		                 </button>
+		                 <a class="navbar-brand" href="#">Start Bootstrap</a>
+		             </div>
+		             <!-- Collect the nav links, forms, and other content for toggling -->
+		             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		                 <ul class="nav navbar-nav">
+		                     <li>
+		                         <a href="#">About</a>
+		                     </li>
+		                     <li>
+		                         <a href="#">Services</a>
+		                     </li>
+		                     <li>
+		                         <a href="#">Contact</a>
+		                     </li>
+		                 </ul>
+		               </div>
+		             			<!-- /.navbar-collapse -->
+		             	</div>
+		             	<!-- /.container -->
+		             </nav>
+
+		           <br><br><br><br><br><br>
 
 		<table class="table table-bordered" >
     <tr>
-    <th colspan="4">your uploads...<label><a href="index.php">upload new files...</a></label></th>
+    <th colspan="11">Listado de archivos!<br><a href="interprete_alta.php">Subir un archivo nuevo</a>
+		<br><a href="index.php">Volver al inicio</a></th>
     </tr>
     <tr>
-    <td>File Name</td>
-    <td>File Type</td>
-    <td>File Size(KB)</td>
-    <td>View</td>
+    <td>Nombre</td>
+    <td>Tipo</td>
+    <td>Tamaño(KB)</td>
+		<td>Categoría</td>
+		<td>Autor</td>
+		<td>Ubicación</td>
+		<td>Lugar</td>
+		<td>Año</td>
+		<td>Cant. Páginas</td>
+		<td>Download</td>
     </tr>
 
 <?php
@@ -37,7 +69,13 @@
         <td><?php echo $row['file'] ?></td>
         <td><?php echo $row['type'] ?></td>
         <td><?php echo $row['size'] ?></td>
-        <td><a href="uploads/<?php echo $row['file'] ?>" target="_blank">view file</a></td>
+				<td><?php echo $row['categoria'] ?></td>
+				<td><?php echo $row['autor'] ?></td>
+				<td><?php echo $row['ubicacion'] ?></td>
+				<td><?php echo $row['lugar'] ?></td>
+				<td><?php echo $row['ano'] ?></td>
+				<td><?php echo $row['pagina'] ?></td>
+				<td><a href="uploads/<?php echo $row['file'] ?>" target="_blank" download>Download!</a></td>
         </tr>
         <?php
 	}

@@ -13,13 +13,38 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-     <div id="wrapper" align="center">
-     <div id="content" class="row">
-          <section>
-               <a style="text-decoration:none;" href="index.php">
-                    <div id="cabeceraB" class="header">Tienda de Discos</div>
-                </a>
-          </section><br><br>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+              </div>
+            			<!-- /.navbar-collapse -->
+            	</div>
+            	<!-- /.container -->
+            </nav>
+
+          <br><br><br><br><br><br>
           <?php
 
 include 'cnx.php';
@@ -47,31 +72,24 @@ if ($_SESSION['registrado']) {
      }
       exit;
 } else {
-     echo '<html>';
-     echo '<head>';
-     echo '       <title>Registro de Usuarios</title>';
-     echo '       <link rel="stylesheet" type="text/css" href="styles.css">';
-     echo '</head>';
-
-     echo '<body>';
-
-     echo $mensaje;
+    echo '<div class="container">';
+    echo '<div class="row">';
+     echo '<div class="col-xs-12 text-center">';
      echo '<form method="POST" action="login.php">';
-     echo '<table class="table table-bordered" style="width: 80%;">';
-     echo '<tr>';
-     echo '<td>Ingrese su nombre de usuario:</td>';
-     echo '<td><input type="text" id="txtu" name="txtu" value="'.$_POST['txtu'].'"></td>';
-     echo '</tr>';
-     echo '<tr>';
-     echo '<td>Ingrese su contrase�a:</td>';
-     echo '<td><input type="password" id="txtp" name="txtp" value="'.$_POST['txtp'].'"></td>';
-     echo '</tr>';
-     echo '<tr>';
-     echo '<td colspan="2"><input type="submit" id="sublogin" class="btn btn-primary" name="sublogin" value="login"></td>';
-     echo '</tr>';
-     echo '<table>';
+     echo '<div class="form-group">';
+     echo '<label for="user">Usuario</label>';
+     echo '<input type="text" id="txtu" class="form-control" name="txtu" value="'.$_POST['txtu'].'">';
+     echo '</div>';
+     echo '<div class="form-group">';
+     echo '<label for="pwd">Contraseña</label>';
+     echo '<input type="password" id="txtp" class="form-control" name="txtp" value="'.$_POST['txtp'].'">';
+     echo '</div>';
+     echo '<input type="submit" id="sublogin" class="btn btn-primary" name="sublogin" value="login">';
      echo '</form>';
      echo '<br /><a href="index.php">ir a inicio</a>';
+     echo '</div>';
+      echo '</div>';
+       echo '</div>';
      echo '</body>';
      echo '</html>';
 }

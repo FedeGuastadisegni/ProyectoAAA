@@ -46,7 +46,7 @@ include 'menu.php';
 if(isset($_POST['subir']))
 {
 	$file = rand(1000,100000)."-".$_FILES['file']['name'];
-    $file_loc = $_FILES['file']['tmp_name'];
+  $file_loc = $_FILES['file']['tmp_name'];
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];
 	$folder="uploads/";
@@ -56,6 +56,7 @@ if(isset($_POST['subir']))
 	$lugar = $_POST['lugar'];
 	$ano = $_POST['ano'];
 	$pagina = $_POST['pagina'];
+	$titulo = $_POST['titulo'];
 
 	// new file size in KB
 	$new_size = $file_size/1024;
@@ -69,11 +70,11 @@ if(isset($_POST['subir']))
 
 	if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
-		$sql="INSERT INTO tbl_uploads(file,type,size,categoria,autor,ubicacion,lugar,ano,pagina) VALUES('$final_file','$file_type','$new_size','$rights','$autor','$ubicacion','$lugar','$ano','$pagina')";
+		$sql="INSERT INTO tbl_uploads(file,type,size,categoria,autor,ubicacion,lugar,ano,pagina,titulo) VALUES('$final_file','$file_type','$new_size','$rights','$autor','$ubicacion','$lugar','$ano','$pagina','$titulo')";
 		mysql_query($sql);
 		?>
 		<script>
-		alert('Archivo subido con exito!');
+		alert('Archivo subido con exito!'); 	
 
         </script>
 		<?php

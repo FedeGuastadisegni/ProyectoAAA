@@ -3,7 +3,10 @@
 <head>
 	<title>Modificacion de Interpretes</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
-     <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+	<script src="js/jquery.sortElements.js"></script>
 </head>
 <body>
      <body>
@@ -40,22 +43,22 @@
 
 		           <br><br><br><br><br><br>
 
-		<table class="table table-bordered" >
+		<table id="table" class="table table-bordered" >
     <tr>
     <th colspan="11">Listado de archivos!<br><a href="interprete_alta.php">Subir un archivo nuevo</a>
 		<br><a href="index.php">Volver al inicio</a></th>
     </tr>
     <tr>
-    <td>Nombre</td>
-    <td>Tipo</td>
-    <td>Tamaño(KB)</td>
-		<td>Categoría</td>
-		<td>Autor</td>
-		<td>Ubicación</td>
-		<td>Lugar</td>
-		<td>Año</td>
-		<td>Cant. Páginas</td>
-		<td>Download</td>
+		    <th id="name">Nombre<span class="fa fa-caret-down"></span></th>
+		    <th>Tipo</th>
+		    <th>Tamaño(KB)</th>
+				<th id="cat">Categoría<span class="fa fa-caret-down"></th>
+				<th>Autor</th>
+				<th>Ubicación</th>
+				<th>Lugar</th>
+				<th>Año</th>
+				<th>Cant. Páginas</th>
+				<th>Download</th>
     </tr>
 
 <?php
@@ -66,7 +69,7 @@
 	{
 		?>
         <tr>
-        <td><?php echo $row['file'] ?></td>
+        <td><?php echo $row['titulo'] ?></td>
         <td><?php echo $row['type'] ?></td>
         <td><?php echo $row['size'] ?></td>
 				<td><?php echo $row['categoria'] ?></td>
@@ -81,10 +84,48 @@
 	}
 	?>
     </table>
-<br>
-     </div>
+			<br>
+    </div>
 </div>
 
 
+
+<!-- Script para ordenar los resultados -->
+<script>
+var table = $('table');
+
+	 $('#name,#cat')
+			 .wrapInner('<span title="sort this column"/>')
+			 .each(function(){
+
+					 var th = $(this),
+							 thIndex = th.index(),
+							 inverse = false;
+
+					 th.click(function(){
+
+							 table.find('td').filter(function(){
+
+									 return $(this).index() === thIndex;
+
+							 }).sortElements(function(a, b){
+
+									 return $.text([a]) > $.text([b]) ?
+											 inverse ? -1 : 1
+											 : inverse ? 1 : -1;
+
+							 }, function(){
+
+									 // parentNode is the element we want to move
+									 return this.parentNode;
+
+							 });
+
+							 inverse = !inverse;
+
+					 });
+
+			 });
+</script>
 </body>
 </html>

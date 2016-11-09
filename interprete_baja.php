@@ -84,7 +84,7 @@ if (mysql_num_rows($res))    {
      echo '</table>';
      echo '</form>';
 } else                          {
-     echo 'No se encontraron interpretes';
+     echo '<p class="text-center">No se encontraron archivos!</p>';
 }
 
 ?>

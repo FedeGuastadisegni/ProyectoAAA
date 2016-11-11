@@ -20,3 +20,5 @@ echo '</div>';
 echo '</div>';
 echo '</div>';
 ?>
+
+<!-- Problema subiendo word. Archivos pesados! -->

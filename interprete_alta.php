@@ -50,7 +50,7 @@ color: #0078FF;
 										<ul class="nav navbar-nav">
 
 												<li>
-														<a href="#">Publicaciones</a>
+														<a href="publi.php">Publicaciones</a>
 												</li>
 												<li>
 														<a href="colab.php">Colaboradores</a>
@@ -111,6 +111,8 @@ if(isset($_POST['subir']))
 	$ano = $_POST['ano'];
 	$pagina = $_POST['pagina'];
 	$titulo = $_POST['titulo'];
+	$tipo_publi = $_POST['tipo_publi'];
+	$edi = $_POST['editorial'];
 
 	// new file size in KB
 	$new_size = $file_size/1024;
@@ -124,7 +126,7 @@ if(isset($_POST['subir']))
 
 	if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
-		$sql="INSERT INTO tbl_uploads(file,type,size,categoria,autor,ubicacion,lugar,ano,pagina,titulo) VALUES('$final_file','$file_type','$new_size','$rights','$autor','$ubicacion','$lugar','$ano','$pagina','$titulo')";
+		$sql="INSERT INTO tbl_uploads(file,type,size,categoria,autor,ubicacion,lugar,ano,pagina,titulo,tipo_publi,editorial) VALUES('$final_file','$file_type','$new_size','$rights','$autor','$ubicacion','$lugar','$ano','$pagina','$titulo','$tipo_publi','$edi')";
 		mysql_query($sql);
 		if ( !empty( $error = mysql_error() ) )
 		{
@@ -179,6 +181,21 @@ echo    '<option>Internet</option>';
 echo  '</select>';
 echo '</td>';
 echo '</tr>';
+echo '<tr>';
+echo '<td>Tipo de archivo</td>';
+echo '<td><select class="form-control" name="tipo_publi"> ';
+echo    '<option>Artículo</option>';
+echo    '<option>Ensayo</option>';
+echo    '<option>Libro</option>';
+echo    '<option>Reseña</option>';
+echo  '</select>';
+echo '</td>';
+echo '</tr>';
+echo '</tr>';
+echo '<tr>';
+echo '<td>Editorial</td><td><input type="text" class="form-control" id="editorial" name="editorial"></td>';
+echo '</tr>';
+
 echo '<tr>';
 echo '<td>Ubicación</td><td><input type="text" class="form-control" id="ubicacion" name="ubicacion"></td>';
 echo '</tr>';

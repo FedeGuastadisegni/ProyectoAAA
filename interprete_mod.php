@@ -53,7 +53,7 @@ color: #0078FF;
 									 <ul class="nav navbar-nav">
 
 											 <li>
-													 <a href="#">Publicaciones</a>
+													 <a href="publi.php">Publicaciones</a>
 											 </li>
 											 <li>
 													 <a href="colab.php">Colaboradores</a>
@@ -104,9 +104,10 @@ color: #0078FF;
     </tr>
     <tr>
 		    <th id="name">Nombre<span class="fa fa-caret-down"></span></th>
-		    <th>Tipo</th>
+		    <th>Tipo archivo</th>
 		    <th>Tamaño(KB)</th>
 				<th id="cat">Categoría<span class="fa fa-caret-down"></th>
+				<th>Editorial</th>
 				<th>Autor</th>
 				<th>Ubicación</th>
 				<th>Lugar</th>
@@ -124,9 +125,10 @@ color: #0078FF;
 		?>
         <tr>
         <td><?php echo $row['titulo'] ?></td>
-        <td><?php echo $row['type'] ?></td>
+        <td><?php echo $row['tipo_publi'] ?></td>
         <td><?php echo $row['size'] ?></td>
 				<td><?php echo $row['categoria'] ?></td>
+				<td><?php echo $row['editorial'] ?></td>
 				<td><?php echo $row['autor'] ?></td>
 				<td><?php echo $row['ubicacion'] ?></td>
 				<td><?php echo $row['lugar'] ?></td>

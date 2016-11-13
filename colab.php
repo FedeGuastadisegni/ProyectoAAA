@@ -54,7 +54,7 @@ color: #0078FF;
                     <ul class="nav navbar-nav">
 
                         <li>
-                            <a href="#">Publicaciones</a>
+                            <a href="publi.php">Publicaciones</a>
                         </li>
                         <li>
                             <a href="colab.php">Colaboradores</a>
@@ -96,7 +96,7 @@ color: #0078FF;
 <!-- /.container -->
 </nav>
 
-          
+
 
           <div class="container">
   <div class="row">

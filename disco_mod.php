@@ -50,7 +50,7 @@ color: #0078FF;
 										<ul class="nav navbar-nav">
 
 												<li>
-														<a href="#">Publicaciones</a>
+														<a href="publi.php">Publicaciones</a>
 												</li>
 												<li>
 														<a href="colab.php">Colaboradores</a>
@@ -109,7 +109,9 @@ if ($_POST[subgrabar]) {
           $sql .= " ubicacion = '".$_POST[ubicacion]."', ";
           $sql .= " lugar = '".$_POST[lugar]."', ";
           $sql .= " ano = '".$_POST[ano]."', ";
-					$sql .= " pagina = '".$_POST[pagina]."'";
+					$sql .= " pagina = '".$_POST[pagina]."', ";
+					$sql .= " tipo_publi = '".$_POST[tipo_publi]."', ";
+					$sql .= " editorial = '".$_POST[editorial]."'";
           $sql .= " where id = ".$_POST[id];
 
 					//echo $sql;
@@ -149,8 +151,14 @@ if ($_GET[id]) {
      echo '<tr>';
      echo '<td>Titulo</td><td><input type=text class="form-control" name=titulo value="'.$row_d[titulo].'"></td>';
      echo '</tr>';
+		 echo '<tr>';
+     echo '<td>Tipo archivo</td><td><input type=text class="form-control" name=tipo_publi value="'.$row_d[tipo_publi].'"></td>';
+     echo '</tr>';
      echo '<tr>';
      echo '<td>Autor</td><td><input type=text class="form-control" name=autor value="'.$row_d[autor].'"></td>';
+     echo '</tr>';
+		 echo '<tr>';
+     echo '<td>Editorial</td><td><input type=text class="form-control" name=editorial value="'.$row_d[editorial].'"></td>';
      echo '</tr>';
      echo '<tr>';
      echo '<td>Categoría</td><td><input type=text class="form-control" name=categoria value="'.$row_d[categoria].'"></td>';
@@ -185,8 +193,10 @@ if ($_GET[id]) {
           echo '<table class="table table-bordered" style="width: 80%;">';
           echo '<tr>';
           echo '<td>Titulo</td>';
+					echo '<td>Tipo archivo</td>';
           echo '<td>Autor</td>';
           echo '<td>Categoría</td>';
+					echo '<td>Editorial</td>';
           echo '<td>Ubicacion</td>';
           echo '<td>Lugar</td>';
           echo '<td>Año</td>';
@@ -196,8 +206,10 @@ if ($_GET[id]) {
           while ($row = mysql_fetch_array($res))  {
                echo '<tr>';
                echo '<td>'.$row[titulo].'</td>';
+							 echo '<td>'.$row[tipo_publi].'</td>';
                echo '<td>'.$row[autor].'</td>';
                echo '<td>'.$row[categoria].'</td>';
+							 echo '<td>'.$row[editorial].'</td>';
                echo '<td>'.$row[ubicacion].'</td>';
                echo '<td>'.$row[lugar].'</td>';
 							 echo '<td>'.$row[ano].'</td>';

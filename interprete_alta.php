@@ -56,7 +56,7 @@ color: #0078FF;
 														<a href="colab.php">Colaboradores</a>
 												</li>
 												<li>
-														<a href="#">Mis fotos</a>
+														<a href="fotos.php">Mis fotos</a>
 												</li>
 										</ul>
 
@@ -136,7 +136,7 @@ if(isset($_POST['subir']))
 		<script>
 		alert('Archivo subido con exito!');
 
-        </script>
+    </script>
 		<?php
 	}
 	else

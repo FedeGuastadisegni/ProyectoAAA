@@ -158,7 +158,7 @@ a {
 																<a href="colab.php">Colaboradores</a>
 														</li>
 														<li>
-																<a href="#">Mis fotos</a>
+																<a href="fotos.php">Mis fotos</a>
 														</li>
 												</ul>
 
@@ -199,13 +199,15 @@ a {
 <!-- Page Content -->
 <!-- Container (The Band Section) -->
 <div id="band" class="container text-center">
-  <h3>Profesor Antonio Anselmo Martino</h3>
+	<img src="img/ant_1.jpg" class="img-rounded" alt="Antonio A. Martino" width="100" height="100">
+  <h3>Profesor Antonio A. Martino</h3>
   <p><em>Univertá di Pisa, Universidad del Salvador, Universidad Nacional de Lanús</em></p>
 <div class="btn-group" role="group" aria-label="...">
 	<button class="toggleButton btn btn-default" data-target="div1">Mi curriculum</button>
 	<button class="toggleButton btn btn-default" data-target="div2">Breve en Ingles</button>
 	<button class="toggleButton btn btn-default" data-target="div3">Breve en Italiano</button>
 	<button class="toggleButton btn btn-default" data-target="div4">Storia docente</button>
+	<button class="toggleButton btn btn-default" data-target="div5">Publicaciones completas</button>
 </div>
 <br><br>
 <div id="div1" class="toggleDiv text-center" style="display:none;">
@@ -738,14 +740,18 @@ elementare.  Puer docet!
 	</p>
 </div>
 
+<div id="div5" class="toggleDiv text-center" style="display:none;">
+	<h3>Articulos</h3>
+
+
+</div>
 
 	<div class="col-md-12">
 	                    <ul class="social-network social-circle">
-	                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
-	                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+	                        <li><a href="https://www.facebook.com/aamartino?fref=ts" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
 	                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-	                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-	                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+	                        <li><a href="https://plus.google.com/104254002109212808851" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+	                        <li><a href="https://ar.linkedin.com/in/antonio-anselmo-martino-8940173b" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 	                    </ul>
 					</div>
 <script>

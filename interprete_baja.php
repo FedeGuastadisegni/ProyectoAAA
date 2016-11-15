@@ -56,7 +56,7 @@ color: #0078FF;
 													 <a href="colab.php">Colaboradores</a>
 											 </li>
 											 <li>
-													 <a href="#">Mis fotos</a>
+													 <a href="fotos.php">Mis fotos</a>
 											 </li>
 									 </ul>
 
@@ -110,6 +110,12 @@ if ($_POST[subgrabar])     {
 							unlink($directory);
 							$sql = "delete from tbl_uploads where id = ".$_POST["$temp"];
               $res = mysql_query($sql);
+							?>
+							<script>
+							alert('Archivo/s dado/s de baja!');
+
+					    </script>
+							<?php
           }
      }
 }

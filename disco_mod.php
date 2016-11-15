@@ -56,7 +56,7 @@ color: #0078FF;
 														<a href="colab.php">Colaboradores</a>
 												</li>
 												<li>
-														<a href="#">Mis fotos</a>
+														<a href="fotos.php">Mis fotos</a>
 												</li>
 										</ul>
 
@@ -124,6 +124,12 @@ if ($_POST[subgrabar]) {
      }
 
      $_GET[id]=$_POST[id];
+		 ?>
+ 		<script>
+ 		alert('Archivo modificado con exito!');
+
+     </script>
+ 		<?php
 }
 
 if ($_GET[id]) {
@@ -147,7 +153,7 @@ if ($_GET[id]) {
 
 
 
-     echo '<table class="table table-bordered" style="width: 80%;">';
+     echo '<table class="table table-bordred table-striped" style="width: 80%;">';
      echo '<tr>';
      echo '<td>Titulo</td><td><input type=text class="form-control" name=titulo value="'.$row_d[titulo].'"></td>';
      echo '</tr>';

@@ -1,7 +1,7 @@
 <?php include 'cnx.php';   ?>
 <html>
 <head>
-	<title>Modificacion de Interpretes</title>
+	<title>Listado de archivos</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
@@ -59,7 +59,7 @@ color: #0078FF;
 													 <a href="colab.php">Colaboradores</a>
 											 </li>
 											 <li>
-													 <a href="#">Mis fotos</a>
+													 <a href="fotos.php">Mis fotos</a>
 											 </li>
 									 </ul>
 
@@ -107,13 +107,13 @@ color: #0078FF;
 		    <th>Tipo archivo</th>
 		    <th>Tamaño(KB)</th>
 				<th id="cat">Categoría<span class="fa fa-caret-down"></th>
-				<th>Editorial</th>
-				<th>Autor</th>
+				<th id="edit">Editorial<span class="fa fa-caret-down"></th>
+				<th id="aut">Autor<span class="fa fa-caret-down"></th>
 				<th>Ubicación</th>
 				<th>Lugar</th>
-				<th>Año</th>
+				<th id="ano">Año<span class="fa fa-caret-down"></th>
 				<th>Cant. Páginas</th>
-				<th>Download</th>
+				<th>Descarga</th>
     </tr>
 
 <?php
@@ -134,7 +134,7 @@ color: #0078FF;
 				<td><?php echo $row['lugar'] ?></td>
 				<td><?php echo $row['ano'] ?></td>
 				<td><?php echo $row['pagina'] ?></td>
-				<td><a href="uploads/<?php echo $row['file'] ?>" target="_blank" download>Download!</a></td>
+				<td><a href="uploads/<?php echo $row['file'] ?>" target="_blank" download>Descarga</a></td>
         </tr>
         <?php
 	}
@@ -150,7 +150,7 @@ color: #0078FF;
 <script>
 var table = $('table');
 
-	 $('#name,#cat')
+	 $('#name,#cat,#edit,#aut,#ano')
 			 .wrapInner('<span title="sort this column"/>')
 			 .each(function(){
 

@@ -1,4 +1,4 @@
-﻿<?php include 'cnx.php';   ?>
+<?php include 'cnx.php';   ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <title>Colaboradores</title>
+  <title>Mis fotos</title>
 
 
 </head>
@@ -100,12 +100,14 @@ color: #0078FF;
 
           <div class="container">
   <div class="row">
-    <h1 class="text-center">Colaboradores</h1>
+    <h1 class="text-center">Mis fotos</h1>
 
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Imagen 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/2255EE"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 2" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/2255EE"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 3" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/2255EE"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 4" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/2255EE"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Norberto Bobbio" href="#"><img class="thumbnail img-responsive" src="img/1.jpg"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="II Convegno Internazionale di studi Logica, informatica, diritto
+Firenze, 3-6 settembre 1985" href="#"><img class="thumbnail img-responsive" src="img/2.jpg"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="II Convegno Internazionale di studi Logica, informatica, diritto
+Firenze, 3-6 settembre 1985" href="#"><img class="thumbnail img-responsive" src="img/3.jpg"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Carlos Eduardo Alchourron, Georg H. von Wrigth y Antonio Martino en el parque de la Scuola Normale Superiore de Pisa, en 1985." href="#"><img class="thumbnail img-responsive" src="img/4.jpg"></a></div>
       <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 5" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/2255EE"></a></div>
       <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 6" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/449955/FFF"></a></div>
       <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 8" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/777"></a></div>

@@ -57,13 +57,13 @@
                       <ul class="nav navbar-nav">
 
                           <li>
-                              <a href="#">Publicaciones</a>
+                              <a href="publi.php">Publicaciones</a>
                           </li>
                           <li>
                               <a href="colab.html">Colaboradores</a>
                           </li>
                           <li>
-                              <a href="#">Mis fotos</a>
+                              <a href="fotos.php">Mis fotos</a>
                           </li>
                       </ul>
 

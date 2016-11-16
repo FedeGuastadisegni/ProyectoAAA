@@ -9,6 +9,7 @@ echo '</tr>';
 
 echo '<tr>';
 echo '<td><a href="disco_mod.php">Modificar un archivo</a></td>';
+echo '<td><a href="file_insert.php">Subir una foto</a></td>';
 echo '</tr>';
 
 echo '</table><br><br>';

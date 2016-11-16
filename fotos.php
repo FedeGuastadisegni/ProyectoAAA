@@ -102,24 +102,34 @@ color: #0078FF;
   <div class="row">
     <h1 class="text-center">Mis fotos</h1>
 
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Norberto Bobbio" href="#"><img class="thumbnail img-responsive" src="img/1.jpg"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="II Convegno Internazionale di studi Logica, informatica, diritto
-Firenze, 3-6 settembre 1985" href="#"><img class="thumbnail img-responsive" src="img/2.jpg"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="II Convegno Internazionale di studi Logica, informatica, diritto
-Firenze, 3-6 settembre 1985" href="#"><img class="thumbnail img-responsive" src="img/3.jpg"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Carlos Eduardo Alchourron, Georg H. von Wrigth y Antonio Martino en el parque de la Scuola Normale Superiore de Pisa, en 1985." href="#"><img class="thumbnail img-responsive" src="img/4.jpg"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 5" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/2255EE"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 6" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/449955/FFF"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 8" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/777"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 9" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/992233"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 10" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/EEE"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 11" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/449955/FFF"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 12" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/DDD"></a></div>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 13" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/992233"></a></div>
+      <?php
+      include "file_constants.php";
+      error_reporting(E_ALL);
 
-    <hr>
+          $link = mysql_connect("$host", "$user", "$pass")
+          or die("Could not connect: " . mysql_error());
 
-    <hr>
+          // select our database
+          mysql_select_db("$db") or die(mysql_error());
+
+          // get the image from the db
+          $sql = "SELECT *FROM test_image;";
+
+          $result = mysql_query("$sql") or die("Invalid query: " . mysql_error());
+
+          while ($row = mysql_fetch_array($result)) {
+              /*echo $row["name"];
+              $id = $row['id'];
+              $url = "http://localhost/ProyectoAAA/file_display.php?id=".$id;*/
+              echo '<div class="col-lg-3 col-sm-4 col-xs-6">';
+              echo '<img src="data:image/jpeg;base64,' . base64_encode( $row['image'] ) . '" height="200" width="250" class="img-rounded" />';
+              echo '<p class="text-center">'.$row['descr'].'</p>';
+              echo '</div>';
+           }
+
+       ?>
+
+
   </div>
 </div>
 <div tabindex="-1" class="modal fade" id="myModal" role="dialog">

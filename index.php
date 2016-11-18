@@ -5,18 +5,15 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
 	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://use.fontawesome.com/c322257c2a.js"></script>
 
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    <script src="js/vendor/bootstrap.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/jquery-1.11.1.min.js"></script>
 
 		<style>
@@ -124,9 +121,9 @@ a.socialIcon:hover, .socialHoverClass {
 	transition: all 0.8s;
 }
 
-a {
- background-color: #2d2d30;
-}
+
+
+
 </style>
 
 </head>
@@ -150,10 +147,23 @@ a {
 										<!-- Collect the nav links, forms, and other content for toggling -->
 										<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 												<ul class="nav navbar-nav">
-
-														<li>
-																<a href="publi.php">Publicaciones</a>
-														</li>
+														<li class="dropdown">
+												        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Publicaciones
+												        <span class="caret"></span></a>
+												        <ul class="dropdown-menu">
+												          <li><a href="publi_CL.php">Ciencia de la Legislación</a></li>
+												          <li><a href="publi_Diges.php">Digesto</a></li>
+												          <li><a href="publi_CP.php">Ciencia política</a></li>
+																	<li><a href="publi_GD.php">Gobierno digital</a></li>
+																	<li><a href="publi_IJ.php">Informática Jurídica</a></li>
+																	<li><a href="publi_DI.php">Derecho de la Informática</a></li>
+																	<li><a href="publi_TGS.php">Teoría general de sistemas</a></li>
+																	<li><a href="publi_FJ.php">Filosofía jurídica</a></li>
+																	<li><a href="publi_LO.php">Lógica</a></li>
+																	<li><a href="publi_IA.php">Inteligencia artificial y Derecho</a></li>
+																	<li><a href="publi_INT.php">Internet</a></li>
+												        </ul>
+      										  </li>
 														<li>
 																<a href="colab.php">Colaboradores</a>
 														</li>
@@ -184,7 +194,7 @@ a {
 											else
 											{?>
 			<ul class="nav navbar-nav navbar-right">
-			<li><a href="login.php">Administrador </a></li>
+			<li><a href="login.php"><span class="glyphicon glyphicon-user"></span> Administrador </a></li>
 			</ul>
 
 		<?php }?>
@@ -210,7 +220,7 @@ a {
 	<button class="toggleButton btn btn-default" data-target="div5">Publicaciones completas</button>
 </div>
 <br><br>
-<div id="div1" class="toggleDiv text-center" style="display:none;">
+	<div id="div1" class="toggleDiv text-center" style="display:none;">
 	<p>1. Abogado de la Universidad de Buenos Aires, 1962.</p>
 <p>2. Profesor titular de Filosof&iacute;a del Derecho de la Universidad de Belgrano (1969- 1978)</p>
 <p>3. Profesor de Introducci&oacute;n al Derecho del la Universidad de Buenos Aires (1971- 1977).</p>

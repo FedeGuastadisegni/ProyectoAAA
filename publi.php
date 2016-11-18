@@ -100,7 +100,63 @@ color: #0078FF;
 </nav>
 
 
-		<h1 class="text-center">Listado de Archivos</h1>
+	<h1 class="text-center">Listado de Archivos</h1>
+	<div id="band" class="container text-center">
+		<div class="btn-group" role="group" aria-label="...">
+			<button class="toggleButton btn btn-default" href="cles.php">Mi curriculum</button>
+			<button class="toggleButton btn btn-default" data-target="div2">Breve en Ingles</button>
+			<button class="toggleButton btn btn-default" data-target="div3">Breve en Italiano</button>
+			<button class="toggleButton btn btn-default" data-target="div4">Storia docente</button>
+			<button class="toggleButton btn btn-default" data-target="div5">Publicaciones completas</button>
+		</div>
+
+		<!-- Tabla para Ciencia de la Legislación -->
+		<div id="div1" class="toggleDiv text-center" style="display:none;">
+			<div class="table-responsive">
+			<table id="table" class="table table-bordered" >
+			    <tr class="active">
+					    <th id="name">Nombre<span class="fa fa-caret-down"></span></th>
+					    <th id="tip">Tipo archivo<span class="fa fa-caret-down"></th>
+					    <th id="tam">Tamaño(KB)</th>
+							<th id="edi">Editorial<span class="fa fa-caret-down"></th>
+							<th id="cat">Categoría<span class="fa fa-caret-down"></th>
+							<th id="au">Autor<span class="fa fa-caret-down"></th>
+							<th id="ubi">Ubicación<span class="fa fa-caret-down"></th>
+							<th id="lug">Lugar<span class="fa fa-caret-down"></th>
+							<th id="ano">Año<span class="fa fa-caret-down"></th>
+							<th id="pag">Cant. Páginas</th>
+							<th>Descarga</th>
+			    </tr>
+
+	<?php
+
+	  $sql="SELECT * FROM tbl_uploads where categoria = 'Ciencia de la Legislación'";
+		$result_set=mysql_query($sql);
+		while($row=mysql_fetch_array($result_set))
+		{
+			?>
+
+	        <tr>
+	        <td><?php echo $row['titulo'] ?></td>
+	        <td><?php echo $row['tipo_publi'] ?></td>
+	        <td><?php echo $row['size'] ?></td>
+					<td><?php echo $row['editorial'] ?></td>
+					<td><?php echo $row['categoria'] ?></td>
+					<td><?php echo $row['autor'] ?></td>
+					<td><?php echo $row['ubicacion'] ?></td>
+					<td><?php echo $row['lugar'] ?></td>
+					<td><?php echo $row['ano'] ?></td>
+					<td><?php echo $row['pagina'] ?></td>
+					<td><a href="uploads/<?php echo $row['file'] ?>" target="_blank" download>Descarga</a></td>
+	        </tr>
+	        <?php
+		}
+		?>
+	    </table>
+		</div>
+		</div>
+	</div>
+
 		<div class="table-responsive">
 		<table id="table" class="table table-bordered" >
 		    <tr class="active">
@@ -119,11 +175,12 @@ color: #0078FF;
 
 <?php
 
-  $sql="SELECT * FROM tbl_uploads";
+  $sql="SELECT * FROM tbl_uploads where categoria = 'Ciencia de la Legislación'";
 	$result_set=mysql_query($sql);
 	while($row=mysql_fetch_array($result_set))
 	{
 		?>
+
         <tr>
         <td><?php echo $row['titulo'] ?></td>
         <td><?php echo $row['tipo_publi'] ?></td>

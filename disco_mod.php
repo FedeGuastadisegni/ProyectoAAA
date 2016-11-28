@@ -8,6 +8,7 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <script src="https://use.fontawesome.com/c322257c2a.js"></script>
+ <script src="js/jquery.sortElements.js"></script>
 </head>
 <body>
 <style>
@@ -108,10 +109,12 @@ color: #0078FF;
 </div>
 <!-- /.container -->
 </nav>
-		           <br><br>
-<?php
 
-include 'menu.php';
+<h3 class="text-center">Modificación de Archivos</h3>
+<h4 class="text-center">A continuación se muestra un listado de los archivos existentes. Seleccione uno para comenzar a modificar. Una vez seleccionado, cambie cualquier campo que desee y haga click en "Modificar".<h4>
+
+
+<?php
 
 $_GET = clean($_GET);
 $_POST = clean($_POST);
@@ -213,17 +216,19 @@ if ($_GET[id]) {
 
      if (mysql_num_rows($res)>0)    {
           echo '<table class="table table-bordered" style="width: 80%;">';
+					echo '<thead>';
           echo '<tr>';
-          echo '<td>Titulo</td>';
-					echo '<td>Tipo archivo</td>';
-          echo '<td>Autor</td>';
-          echo '<td>Categoría</td>';
-					echo '<td>Editorial</td>';
-          echo '<td>Ubicacion</td>';
-          echo '<td>Lugar</td>';
-          echo '<td>Año</td>';
-					echo '<td>Cant. Páginas</td>';
+          echo '<th	>Titulo</td>';
+					echo '<th>Tipo archivo</td>';
+          echo '<th>Autor</td>';
+          echo '<th>Categoría</td>';
+					echo '<th>Editorial</td>';
+          echo '<th>Ubicacion</td>';
+          echo '<th>Lugar</td>';
+          echo '<th>Año</td>';
+					echo '<th>Cant. Páginas</td>';
           echo '</tr>';
+					echo '</thead>';
 
           while ($row = mysql_fetch_array($res))  {
                echo '<tr>';
@@ -251,6 +256,44 @@ if ($_GET[id]) {
      </div>
 </div>
 
+
+<!-- Script para ordenar los resultados -->
+<script>
+var table = $('table');
+
+	 $('#name')
+			 .wrapInner('<span title="sort this column"/>')
+			 .each(function(){
+
+					 var th = $(this),
+							 thIndex = th.index(),
+							 inverse = false;
+
+					 th.click(function(){
+
+							 table.find('td').filter(function(){
+
+									 return $(this).index() === thIndex;
+
+							 }).sortElements(function(a, b){
+
+									 return $.text([a]) > $.text([b]) ?
+											 inverse ? -1 : 1
+											 : inverse ? 1 : -1;
+
+							 }, function(){
+
+									 // parentNode is the element we want to move
+									 return this.parentNode;
+
+							 });
+
+							 inverse = !inverse;
+
+					 });
+
+			 });
+</script>
 
 </body>
 </html>

@@ -8,23 +8,30 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <script src="https://use.fontawesome.com/c322257c2a.js"></script>
+ <link rel="stylesheet" href="pure-min.css">
+ <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+ <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
 	<script src="js/jquery.sortElements.js"></script>
+	<link rel="stylesheet" href="css/layouts/publi.css">
 </head>
 <body>
 <style>
- body {
- padding-top: 70px;
 
- }
+
+body {
+padding-top: 70px;
+
+}
 
 .navbar {
- font-family: Montserrat, sans-serif;
- margin-bottom: 0;
- background-color: #2d2d30;
- border: 0;
- font-size: 10px;
- letter-spacing: 1px;
- opacity: 0.9;
+font-family: Montserrat, sans-serif;
+margin-bottom: 0;
+background-color: #2d2d30;
+border: 0;
+font-size: 10px;
+letter-spacing: 1px;
+opacity: 0.9;
 }
 
 .navbar .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -33,8 +40,10 @@ color: #0078FF;
 }
 
 .table > thead > tr > th, .table > tbody > tr > th{
-	text-align:center;
+ text-align:center;
 }
+
+
 </style>
 
 
@@ -114,12 +123,6 @@ color: #0078FF;
 <!-- /.container -->
 </nav>
 
-
-
-	<h1 class="text-center">Listado de Archivos</h1>
-
-		<!-- Tabla para Ciencia de la Legislación -->
-
 		<?php
 
 		$sql="SELECT * FROM tbl_uploads where categoria = 'Ciencia de la Legislación'";
@@ -127,21 +130,27 @@ color: #0078FF;
 		$result_rows = mysql_num_rows($result_set);
 		if ($result_rows > 0){
 			?>
-			<div class="table-responsive">
-			<table id="table" class="table table-bordered" >
-					<tr class="active">
-							<th id="name">Nombre<span class="fa fa-caret-down"></span></th>
-							<th id="tip">Tipo archivo<span class="fa fa-caret-down"></th>
-							<th id="tam">Tamaño(KB)</th>
-							<th id="edi">Editorial<span class="fa fa-caret-down"></th>
-							<th id="cat">Categoría<span class="fa fa-caret-down"></th>
-							<th id="au">Autor<span class="fa fa-caret-down"></th>
-							<th id="ubi">Ubicación<span class="fa fa-caret-down"></th>
-							<th id="lug">Lugar<span class="fa fa-caret-down"></th>
-							<th id="ano">Año<span class="fa fa-caret-down"></th>
-							<th id="pag">Cant. Páginas</th>
-							<th>Descarga</th>
-					</tr>
+			<div class="panel panel-primary">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading text-center" style="max-height: 200;">Ciencias de la Legislación</div>
+
+					<div class="panel-body">
+					<table id="table" class="table table-bordered" >
+								<thead>
+									<tr>
+											<th id="name">Nombre<span class="fa fa-caret-down"></span></th>
+											<th id="tip">Tipo<span class="fa fa-caret-down"></th>
+											<th id="tam">Tamaño(KB)</th>
+											<th id="edi">Editorial<span class="fa fa-caret-down"></th>
+											<th id="cat">Categoría<span class="fa fa-caret-down"></th>
+											<th id="au">Autor<span class="fa fa-caret-down"></th>
+											<th id="ubi">Ubicación<span class="fa fa-caret-down"></th>
+											<th id="lug">Lugar<span class="fa fa-caret-down"></th>
+											<th id="ano">Año<span class="fa fa-caret-down"></th>
+											<th id="pag">Cant. Páginas</th>
+											<th>Descarga</th>
+									</tr>
+								</thead>
 		<?php
 		while($row=mysql_fetch_array($result_set))
 		{
@@ -168,8 +177,9 @@ color: #0078FF;
 	}
 	?>
 
-    </table>
-	</div>
+</table>
+</div>
+</div>
 
 
 <!-- Script para ordenar los resultados -->

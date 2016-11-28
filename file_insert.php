@@ -110,11 +110,12 @@ color: #0078FF;
 <!-- /.container -->
 </nav>
 
-          <br><br><br>
-<?php include 'menu.php';?>
+
+<?php?>
 
 <div id="band" class="container text-center">
-	<h3>Suba una foto</h3>
+	<h3 class="text-center">Suba una foto.</h3>
+	<h4>Para subir una foto, primero seleccionela tocando el botón "Foto" y luego, agreguelé una descripción. Por último, haga click en el botón "Subir". </h4>
 </div>
 <form enctype="multipart/form-data" action=
       "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">

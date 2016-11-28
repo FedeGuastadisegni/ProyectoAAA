@@ -115,9 +115,7 @@ color: #0078FF;
 </nav>
 
 
-	<h1 class="text-center">Listado de Archivos</h1>
 
-		<!-- Tabla para Ciencia de la Legislación -->
 
 		<?php
 
@@ -126,21 +124,26 @@ color: #0078FF;
 		$result_rows = mysql_num_rows($result_set);
 		if ($result_rows > 0){
 			?>
-			<div class="table-responsive">
-			<table id="table" class="table table-bordered" >
-					<tr class="active">
-							<th id="name">Nombre<span class="fa fa-caret-down"></span></th>
-							<th id="tip">Tipo archivo<span class="fa fa-caret-down"></th>
-							<th id="tam">Tamaño(KB)</th>
-							<th id="edi">Editorial<span class="fa fa-caret-down"></th>
-							<th id="cat">Categoría<span class="fa fa-caret-down"></th>
-							<th id="au">Autor<span class="fa fa-caret-down"></th>
-							<th id="ubi">Ubicación<span class="fa fa-caret-down"></th>
-							<th id="lug">Lugar<span class="fa fa-caret-down"></th>
-							<th id="ano">Año<span class="fa fa-caret-down"></th>
-							<th id="pag">Cant. Páginas</th>
-							<th>Descarga</th>
-					</tr>
+
+			<div class="panel panel-primary">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading text-center" style="max-height: 200;">Ciencias Políticas</div>
+
+					<div class="panel-body">
+					<table id="table" class="table table-bordered" >
+							<tr class="active">
+									<th id="name">Nombre<span class="fa fa-caret-down"></span></th>
+									<th id="tip">Tipo archivo<span class="fa fa-caret-down"></th>
+									<th id="tam">Tamaño(KB)</th>
+									<th id="edi">Editorial<span class="fa fa-caret-down"></th>
+									<th id="cat">Categoría<span class="fa fa-caret-down"></th>
+									<th id="au">Autor<span class="fa fa-caret-down"></th>
+									<th id="ubi">Ubicación<span class="fa fa-caret-down"></th>
+									<th id="lug">Lugar<span class="fa fa-caret-down"></th>
+									<th id="ano">Año<span class="fa fa-caret-down"></th>
+									<th id="pag">Cant. Páginas</th>
+									<th>Descarga</th>
+							</tr>
 		<?php
 		while($row=mysql_fetch_array($result_set))
 		{
@@ -168,6 +171,7 @@ color: #0078FF;
 	?>
 
     </table>
+	</div>
 	</div>
 
 

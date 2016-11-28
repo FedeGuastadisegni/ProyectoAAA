@@ -109,10 +109,11 @@ color: #0078FF;
 <!-- /.container -->
 </nav>
 
-		           <br><br>
+<h3 class="text-center">Modificación de Fotos</h3>
+<h4 class="text-center">En este apartado, podra modificar la descripción de las fotos que esten almacenadas.</h4>           
 <?php
 
-include 'menu.php';
+
 
 $_GET = clean($_GET);
 $_POST = clean($_POST);

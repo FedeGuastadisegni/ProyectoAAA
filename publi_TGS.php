@@ -8,7 +8,7 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <script src="https://use.fontawesome.com/c322257c2a.js"></script>
-	
+
 	<script src="js/jquery.sortElements.js"></script>
 </head>
 <body>
@@ -127,8 +127,12 @@ color: #0078FF;
 		$result_rows = mysql_num_rows($result_set);
 		if ($result_rows > 0){
 			?>
-			<div class="table-responsive">
-			<table id="table" class="table table-bordered" >
+			<div class="panel panel-primary">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading text-center" style="max-height: 200;">Teoría General de Sistemas</div>
+
+					<div class="panel-body">
+					<table id="table" class="table table-bordered" >
 					<tr class="active">
 							<th id="name">Nombre<span class="fa fa-caret-down"></span></th>
 							<th id="tip">Tipo archivo<span class="fa fa-caret-down"></th>
@@ -168,8 +172,9 @@ color: #0078FF;
 	}
 	?>
 
-    </table>
-	</div>
+</table>
+</div>
+</div>
 
 
 <!-- Script para ordenar los resultados -->

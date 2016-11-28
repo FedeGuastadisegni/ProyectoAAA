@@ -119,7 +119,13 @@ color: #0078FF;
           <br><br>
 <?php
 
-include 'menu.php';
+
+
+?>
+
+<h3 class="text-center">Alta de archivos</h3>
+<h4 class="text-center">Para subir un archivo, complete los campos que estan a continuación. Por último, seleccione el archivo que desee y haga click en "Subir".<h4>
+<?php
 
 if(isset($_POST['subir']))
 {

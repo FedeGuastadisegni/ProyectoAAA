@@ -127,8 +127,12 @@ color: #0078FF;
 		$result_rows = mysql_num_rows($result_set);
 		if ($result_rows > 0){
 			?>
-			<div class="table-responsive">
-			<table id="table" class="table table-bordered" >
+			<div class="panel panel-primary">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading text-center" style="max-height: 200;">Lógica</div>
+
+					<div class="panel-body">
+					<table id="table" class="table table-bordered" >
 					<tr class="active">
 							<th id="name">Nombre<span class="fa fa-caret-down"></span></th>
 							<th id="tip">Tipo archivo<span class="fa fa-caret-down"></th>
@@ -168,8 +172,9 @@ color: #0078FF;
 	}
 	?>
 
-    </table>
-	</div>
+</table>
+</div>
+</div>
 
 
 <!-- Script para ordenar los resultados -->

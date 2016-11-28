@@ -109,11 +109,12 @@ color: #0078FF;
 <!-- /.container -->
 </nav>
 
-		           <br><br>
+<h3 class="text-center">Elimine una foto</h3>
+<h4 class="text-center">Para eliminar una foto, seleccionela y haga click en el botón "Dar de baja".</h4>
 
                <?php
 
-               include 'menu.php';
+
 
                $_POST = clean($_POST);
 

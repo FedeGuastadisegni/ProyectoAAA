@@ -8,9 +8,6 @@
 
     <title>Inicio</title>
 
-
-
-
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -20,19 +17,16 @@
     <link rel="stylesheet" href="pure-min.css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
     <script src="js/jquery.sortElements.js"></script>
     <link rel="stylesheet" href="css/layouts/publi.css">
-        <link rel="stylesheet" href="css/layouts/marketing.css">
+    <link rel="stylesheet" href="css/layouts/marketing.css">
     <!--<![endif]-->
 </head>
 
 
 <style>
-  body {
-  padding-top: 70px;
 
-  }
 
 .navbar {
   font-family: Montserrat, sans-serif;
@@ -155,6 +149,12 @@ a.socialIcon:hover, .socialHoverClass {
 	transition: all 0.8s;
 }
 
+.pure-img {
+    max-width: 20%;
+    height: auto;
+    display: center;
+}
+
 </style>
 
 <body>
@@ -239,53 +239,12 @@ a.socialIcon:hover, .socialHoverClass {
 
 <div class="splash-container">
     <div class="splash">
-
+        <img class="pure-img" src="img/ant_1.jpg" alt="Mountain" style="border-radius: 50%;">
         <h1 class="splash-head">Profesor Antonio A. Martino</h1>
         <p class="splash-subhead">
-            Univertá di Pisa, Universidad del Salvador, Universidad Nacional de Lanús
+            Univertá di Pisa, Universidad del Salvador, Universidad Nacional de Lanús.
         </p>
     </div>
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="img_chania.jpg" alt="Chania">
-    </div>
-
-    <div class="item">
-      <img src="img_chania2.jpg" alt="Chania">
-    </div>
-
-    <div class="item">
-      <img src="img_flower.jpg" alt="Flower">
-    </div>
-
-    <div class="item">
-      <img src="img_flower2.jpg" alt="Flower">
-    </div>
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-
 </div>
 
 <div class="content-wrapper">
@@ -295,7 +254,7 @@ a.socialIcon:hover, .socialHoverClass {
         <div class="pure-g">
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
 
-                <h3 class="content-subhead">
+                <h3 class="content-subhead text-center">
                     <i class="fa fa-file-text-o"></i><a href="CV.php">
                     Mi Curriculum
                 </a></h3>
@@ -304,7 +263,7 @@ a.socialIcon:hover, .socialHoverClass {
                 </p>
             </div>
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
+                <h3 class="content-subhead text-center">
                     <i class="fa fa-dedent"></i><a href="breve_ing.php">
                     Brief introduction
                 </a></h3>
@@ -313,7 +272,7 @@ a.socialIcon:hover, .socialHoverClass {
                 </p>
             </div>
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
+                <h3 class="content-subhead text-center">
                     <i class="fa fa-dedent"></i><a href="breve_ita.php">
                     Breve introduzione
                 </a></h3>
@@ -322,7 +281,7 @@ a.socialIcon:hover, .socialHoverClass {
                 </p>
             </div>
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
+                <h3 class="content-subhead text-center">
                     <i class="fa fa-th-large"></i><a href="storia.php">
                     Storia docente
                 </a></h3>

@@ -114,7 +114,7 @@ color: #0078FF;
 
 
 
-          <div class="container">
+<div class="container">
   <div class="row">
     <h1 class="text-center">Mis fotos</h1>
 

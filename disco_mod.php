@@ -110,9 +110,27 @@ color: #0078FF;
 <!-- /.container -->
 </nav>
 
-<h3 class="text-center">Modificación de Archivos</h3>
+<h2 class="text-center">Modificación de Archivos</h2>
 <h4 class="text-center">A continuación se muestra un listado de los archivos existentes. Seleccione uno para comenzar a modificar. Una vez seleccionado, cambie cualquier campo que desee y haga click en "Modificar".<h4>
 
+	<div class="container">
+	  <h4 class="text-center">Recuerde que el campo "Categoría" tiene que tener los siguientes valores exactos, ya que sino, no van a aparecer en sus respectivas pestañas:</h4>
+	  <div class="panel panel-default">
+
+	    <div class="panel-body">Ciencia de la Legislación</div>
+	    <div class="panel-footer">Digesto</div>
+			<div class="panel-body">Ciencia política</div>
+			<div class="panel-footer">Gobierno digital</div>
+			<div class="panel-body">Informática Jurídica</div>
+			<div class="panel-footer">Derecho de la Informática</div>
+			<div class="panel-body">Informática Jurídica</div>
+			<div class="panel-footer">Teoría general de sistemas</div>
+			<div class="panel-body">Filosofía jurídica</div>
+			<div class="panel-footer">Lógica</div>
+			<div class="panel-body">Inteligencia artificial y Derecho</div>
+			<div class="panel-footer">Internet</div>
+	  </div>
+	</div>
 
 <?php
 
@@ -172,7 +190,7 @@ if ($_GET[id]) {
 
 
 
-     echo '<table class="table table-bordred table-striped" style="width: 80%;">';
+     echo '<table class="table table-bordred" style="width: 85%;">';
      echo '<tr>';
      echo '<td>Titulo</td><td><input type=text class="form-control" name=titulo value="'.$row_d[titulo].'"></td>';
      echo '</tr>';

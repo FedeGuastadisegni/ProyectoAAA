@@ -115,9 +115,7 @@ color: #0078FF;
 <!-- /.container -->
 </nav>
 
-	<h1 class="text-center">Listado de Archivos</h1>
 
-		<!-- Tabla para Ciencia de la Legislación -->
 
 		<?php
 

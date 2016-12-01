@@ -298,11 +298,10 @@ a.socialIcon:hover, .socialHoverClass {
 
         <div class="col-md-12" style="color:#1F8DD6">
                     <ul class="social-network social-circle">
-                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://www.facebook.com/aamartino" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="mailto:aamartino@gmail.com" class="icoTwitter" title="Mail"><i class="fa fa-envelope-o"></i></a></li>
+                        <li><a href="https://plus.google.com/104254002109212808851" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="https://ar.linkedin.com/in/antonio-anselmo-martino-8940173b" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
 				</div>
 

@@ -2,6 +2,7 @@
 <html>
 	<head>
 	<title>Menu Administrador</title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -110,7 +111,7 @@ color: #0078FF;
 <!-- /.container -->
 </nav>
 
-          
+
 <div id="band" class="container text-center">
 	<h3>Menú de administrador</h3>
 	<h4>Seleccione alguna de la opciones para comenzar. Recuerde que puede volver a este menú cuando lo desee haciendo click en "Menú de Administrador", localizado en la barra de navegación.<h4>

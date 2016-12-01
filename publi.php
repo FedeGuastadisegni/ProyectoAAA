@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Publicaciones</title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">

@@ -3,6 +3,7 @@
 <head>
 	<title>Modificacion de una foto</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<meta charset="utf-8">
 	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -110,7 +111,7 @@ color: #0078FF;
 </nav>
 
 <h3 class="text-center">Modificación de Fotos</h3>
-<h4 class="text-center">En este apartado, podra modificar la descripción de las fotos que esten almacenadas.</h4>           
+<h4 class="text-center">En este apartado, podra modificar la descripción de las fotos que esten almacenadas.</h4>
 <?php
 
 

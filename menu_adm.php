@@ -110,15 +110,18 @@ color: #0078FF;
 </div>
 <!-- /.container -->
 </nav>
-
-
 <div id="band" class="container text-center">
-	<h3>Menú de administrador</h3>
-	<h4>Seleccione alguna de la opciones para comenzar. Recuerde que puede volver a este menú cuando lo desee haciendo click en "Menú de Administrador", localizado en la barra de navegación.<h4>
-</div>
- 	<?php
-		include 'menu.php';
-	?>
+<?php
+	if($_SESSION['username']=='root'){
+		?>
+		<h3>Menú de administrador</h3>
+		<h4>Seleccione alguna de la opciones para comenzar. Recuerde que puede volver a este menú cuando lo desee haciendo click en "Menú de Administrador", localizado en la barra de navegación.<h4>
+		<?php include 'menu.php';
+	}else{
+		echo "Debe tener permisos de administrador!.";
+	}
+ ?>
+	</div>
 </body>
 
 </html>

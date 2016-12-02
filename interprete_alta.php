@@ -116,15 +116,94 @@ color: #0078FF;
 <!-- /.container -->
 </nav>
 
-          <br><br>
 <?php
 
+if($_SESSION['username']=='root'){
+
+	?>
+	<div class="container text-center">
+	<h3 class="text-center">Alta de archivos</h3>
+	<h4 class="text-center">Para subir un archivo, complete los campos que estan a continuación. Por último, seleccione el archivo que desee y haga click en "Subir".<h4>
+	<?php
+	echo '<form method="post" action="" enctype="multipart/form-data">';
+
+	echo '<table class="table table-bordered" style="width: 80%;">';
+	echo '<tr>';
+	echo '<td>Autor/es</td><td><input type="text" class="form-control" id="autor" name="autor"></td>';
+	echo '</tr>';
+	echo '<tr>';
+	echo '<td>Titulo del archivo</td><td><input type="text" class="form-control" id="titulo" name="titulo"></td>';
+	echo '</tr>';
+	echo '<tr>';
+	echo '<td> Categoría</td>';
+	echo '<td><select class="form-control" name="categoria"> ';
+	echo    '<option>Ciencia de la Legislación</option>';
+	echo    '<option>Digesto</option>';
+	echo    '<option>Ciencia política</option>';
+	echo    '<option>Gobierno digital</option>';
+	echo    '<option>Informática Jurídica</option>';
+	echo    '<option>Derecho de la Informática</option>';
+	echo    '<option>Teoría general de sistemas</option>';
+	echo    '<option>Filosofía jurídica</option>';
+	echo    '<option>Lógica</option>';
+	echo    '<option>Inteligencia artificial y Derecho</option>';
+	echo    '<option>Internet</option>';
+	echo  '</select>';
+	echo '</td>';
+	echo '</tr>';
+	echo '<tr>';
+	echo '<td>Tipo de archivo</td>';
+	echo '<td><select class="form-control" name="tipo_publi"> ';
+	echo    '<option>Artículo</option>';
+	echo    '<option>Ensayo</option>';
+	echo    '<option>Libro</option>';
+	echo    '<option>Reseña</option>';
+	echo  '</select>';
+	echo '</td>';
+	echo '</tr>';
+	echo '</tr>';
+	echo '<tr>';
+	echo '<td>Editorial</td><td><input type="text" class="form-control" id="editorial" name="editorial"></td>';
+	echo '</tr>';
+
+	echo '<tr>';
+	echo '<td>Ubicación</td><td><input type="text" class="form-control" id="ubicacion" name="ubicacion"></td>';
+	echo '</tr>';
+	echo '<tr>';
+	echo '<td>Lugar de publicación</td><td><input type="text" class="form-control" id="lugar" name="lugar"></td>';
+	echo '</tr>';
+	echo '<tr>';
+	echo '<td>Año</td><td><input type="text" class="form-control" id="ano" name="ano"></td>';
+	echo '</tr>';
+	echo '<tr>';
+	echo '<td>Páginas</td><td><input type="text" class="form-control" id="pagina" name="pagina"></td>';
+	echo '</tr>';
+	echo '<td>';
+
+	echo '
+	<div class="fileUpload btn btn-success">
+	    <span>Upload</span>
+	    <input id="uploadBtn" type="file" class="upload" name="file" />
+	</div>';
+	echo '<td><input id="uploadFile" class="form-control" placeholder="Archivo elegido" disabled="disabled" /></td>';
+	echo '</td >';
+	echo '<tr>';
+	echo '<td colspan="2"><input class="btn btn-primary" value="Subir!" type="submit" name="subir"></td>';
+	echo '</tr>';
+	echo '</table>';
+
+	echo '</form>';
+}else{
+	?>
+	<h4 class="text-center">Necesita permisos de administrador.</h4>
+	<?php
+}
+	?>
 
 
-?>
 
-<h3 class="text-center">Alta de archivos</h3>
-<h4 class="text-center">Para subir un archivo, complete los campos que estan a continuación. Por último, seleccione el archivo que desee y haga click en "Subir".<h4>
+
+
 <?php
 
 if(isset($_POST['subir']))
@@ -181,82 +260,10 @@ if(isset($_POST['subir']))
 
 
 }
-
-
-
-
-echo '<form method="post" action="" enctype="multipart/form-data">';
-
-echo '<table class="table table-bordered" style="width: 80%;">';
-echo '<tr>';
-echo '<td>Autor/es</td><td><input type="text" class="form-control" id="autor" name="autor"></td>';
-echo '</tr>';
-echo '<tr>';
-echo '<td>Titulo del archivo</td><td><input type="text" class="form-control" id="titulo" name="titulo"></td>';
-echo '</tr>';
-echo '<tr>';
-echo '<td> Categoría</td>';
-echo '<td><select class="form-control" name="categoria"> ';
-echo    '<option>Ciencia de la Legislación</option>';
-echo    '<option>Digesto</option>';
-echo    '<option>Ciencia política</option>';
-echo    '<option>Gobierno digital</option>';
-echo    '<option>Informática Jurídica</option>';
-echo    '<option>Derecho de la Informática</option>';
-echo    '<option>Teoría general de sistemas</option>';
-echo    '<option>Filosofía jurídica</option>';
-echo    '<option>Lógica</option>';
-echo    '<option>Inteligencia artificial y Derecho</option>';
-echo    '<option>Internet</option>';
-echo  '</select>';
-echo '</td>';
-echo '</tr>';
-echo '<tr>';
-echo '<td>Tipo de archivo</td>';
-echo '<td><select class="form-control" name="tipo_publi"> ';
-echo    '<option>Artículo</option>';
-echo    '<option>Ensayo</option>';
-echo    '<option>Libro</option>';
-echo    '<option>Reseña</option>';
-echo  '</select>';
-echo '</td>';
-echo '</tr>';
-echo '</tr>';
-echo '<tr>';
-echo '<td>Editorial</td><td><input type="text" class="form-control" id="editorial" name="editorial"></td>';
-echo '</tr>';
-
-echo '<tr>';
-echo '<td>Ubicación</td><td><input type="text" class="form-control" id="ubicacion" name="ubicacion"></td>';
-echo '</tr>';
-echo '<tr>';
-echo '<td>Lugar de publicación</td><td><input type="text" class="form-control" id="lugar" name="lugar"></td>';
-echo '</tr>';
-echo '<tr>';
-echo '<td>Año</td><td><input type="text" class="form-control" id="ano" name="ano"></td>';
-echo '</tr>';
-echo '<tr>';
-echo '<td>Páginas</td><td><input type="text" class="form-control" id="pagina" name="pagina"></td>';
-echo '</tr>';
-echo '<td>';
-
-echo '
-<div class="fileUpload btn btn-success">
-    <span>Upload</span>
-    <input id="uploadBtn" type="file" class="upload" name="file" />
-</div>';
-echo '<td><input id="uploadFile" class="form-control" placeholder="Archivo elegido" disabled="disabled" /></td>';
-echo '</td >';
-echo '<tr>';
-echo '<td colspan="2"><input class="btn btn-primary" value="Subir!" type="submit" name="subir"></td>';
-echo '</tr>';
-echo '</table>';
-
-echo '</form>';
-
 ?>
-<br>
-	</div>
+
+
+
 </div>
 
 <script> document.getElementById("uploadBtn").onchange = function () {

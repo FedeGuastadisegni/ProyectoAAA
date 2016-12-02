@@ -110,8 +110,13 @@ color: #0078FF;
 <!-- /.container -->
 </nav>
 
-<h3 class="text-center">Modificación de Fotos</h3>
-<h4 class="text-center">En este apartado, podra modificar la descripción de las fotos que esten almacenadas.</h4>
+<?php
+	if($_SESSION['username']=='root'){
+
+		?>
+		<h3 class="text-center">Modificación de Fotos</h3>
+		<h4 class="text-center">En este apartado, podra modificar la descripción de las fotos que esten almacenadas.</h4>
+
 <?php
 
 
@@ -213,7 +218,14 @@ if ($_GET[id]) {
      }
 }
 
+
+}else{
+	?>
+	<h4 class="text-center">Necesita permisos de administrador.</h4>
+	<?php
+}
 ?>
+
 <br>
      </div>
 </div>

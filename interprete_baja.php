@@ -117,9 +117,46 @@ color: #0078FF;
 </nav>
 
 
+<?php
+	if($_SESSION['username']=='root'){
+		?>
+		<h3 class="text-center">Baja de archivos</h3>
+		<h4 class="text-center">Para eliminar algún archivo, seleccionelo y haga click en el botón "Dar de baja".<h4>
+		<?php
+		$sql = "select * from tbl_uploads order by titulo asc";
+		$res = mysql_query($sql);
 
-<h3 class="text-center">Baja de archivos</h3>
-<h4 class="text-center">Para eliminar algún archivo, seleccionelo y haga click en el botón "Dar de baja".<h4>
+		if (mysql_num_rows($res))    {
+		     echo '<form action="?" method=POST>';
+		     echo '<table class="table table-bordered" style="width: 80%;">';
+		     echo '<tr><td>Nombre</td><td>Categoría</td><td>¿Dar de baja?</td></tr>';
+
+		     $c=1;
+		     while ($row = mysql_fetch_array($res))  {
+		          echo '<tr>';
+		          echo '<td>'.$row[titulo].'</td>';
+							echo '<td>'.$row[categoria].'</td>';
+		          echo '<td><input type=checkbox name=check'.$c.' value='.$row[id].'></td>';
+		          echo '</tr>';
+		          $c++;
+		     }
+		     echo '<input type=hidden name=cant value='.$c.'>';
+		     echo '<tr>';
+		     echo '<td colspan="2"><input class="btn btn-primary" value="Dar de Baja" type="submit" name="subgrabar"></td>';
+		     echo '</tr>';
+		     echo '</table>';
+		     echo '</form>';
+		} else                          {
+		     echo '<p class="text-center">No se encontraron archivos!</p>';
+		}
+
+	}else{
+		?>
+		<h4 class="text-center">Necesita permisos de administrador.</h4>
+		<?php
+	}
+		?>
+
 <?php
 
 
@@ -146,32 +183,7 @@ if ($_POST[subgrabar])     {
      }
 }
 
-$sql = "select * from tbl_uploads order by titulo asc";
-$res = mysql_query($sql);
 
-if (mysql_num_rows($res))    {
-     echo '<form action="?" method=POST>';
-     echo '<table class="table table-bordered" style="width: 80%;">';
-     echo '<tr><td>Nombre</td><td>Categoría</td><td>¿Dar de baja?</td></tr>';
-
-     $c=1;
-     while ($row = mysql_fetch_array($res))  {
-          echo '<tr>';
-          echo '<td>'.$row[titulo].'</td>';
-					echo '<td>'.$row[categoria].'</td>';
-          echo '<td><input type=checkbox name=check'.$c.' value='.$row[id].'></td>';
-          echo '</tr>';
-          $c++;
-     }
-     echo '<input type=hidden name=cant value='.$c.'>';
-     echo '<tr>';
-     echo '<td colspan="2"><input class="btn btn-primary" value="Dar de Baja" type="submit" name="subgrabar"></td>';
-     echo '</tr>';
-     echo '</table>';
-     echo '</form>';
-} else                          {
-     echo '<p class="text-center">No se encontraron archivos!</p>';
-}
 
 ?>
 <br>

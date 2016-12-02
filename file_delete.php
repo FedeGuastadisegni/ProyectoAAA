@@ -110,8 +110,12 @@ color: #0078FF;
 <!-- /.container -->
 </nav>
 
-<h3 class="text-center">Elimine una foto</h3>
-<h4 class="text-center">Para eliminar una foto, seleccionela y haga click en el botón "Dar de baja".</h4>
+<?php
+	if($_SESSION['username']=='root'){
+		?>
+		<h3 class="text-center">Elimine una foto</h3>
+		<h4 class="text-center">Para eliminar una foto, seleccionela y haga click en el botón "Dar de baja".</h4>
+
 
                <?php
 
@@ -167,8 +171,12 @@ color: #0078FF;
                } else                          {
                     echo '<p class="text-center">No se encontraron archivos!</p>';
                }
-
-               ?>
+}else{
+	?>
+	<h4 class="text-center">Necesita permisos de administrador.</h4>
+	<?php
+}
+	?>
                <br>
                     </div>
                </div>

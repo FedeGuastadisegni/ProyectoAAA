@@ -113,8 +113,10 @@ color: #0078FF;
 <!-- /.container -->
 </nav>
 
-		           <br><br>
 
+<?php
+	if($_SESSION['username']=='root'){
+		?>
 		<table id="table" class="table table-bordered" >
     <tr>
     <th colspan="11">Listado de archivos!<br><a href="interprete_alta.php">Subir un archivo nuevo</a>
@@ -133,35 +135,37 @@ color: #0078FF;
 				<th>Cant. Páginas</th>
 				<th>Descarga</th>
     </tr>
-
-<?php
-
-  $sql="SELECT * FROM tbl_uploads";
-	$result_set=mysql_query($sql);
-	while($row=mysql_fetch_array($result_set))
-	{
+		<?php
+		$sql="SELECT * FROM tbl_uploads";
+		$result_set=mysql_query($sql);
+		while($row=mysql_fetch_array($result_set))
+		{
+			?>
+	        <tr>
+	        <td><?php echo $row['titulo'] ?></td>
+	        <td><?php echo $row['tipo_publi'] ?></td>
+	        <td><?php echo $row['size'] ?></td>
+					<td><?php echo $row['categoria'] ?></td>
+					<td><?php echo $row['editorial'] ?></td>
+					<td><?php echo $row['autor'] ?></td>
+					<td><?php echo $row['ubicacion'] ?></td>
+					<td><?php echo $row['lugar'] ?></td>
+					<td><?php echo $row['ano'] ?></td>
+					<td><?php echo $row['pagina'] ?></td>
+					<td><a href="uploads/<?php echo $row['file'] ?>" target="_blank" download>Descarga</a></td>
+	        </tr>
+	        <?php
+		}
+	}else{
 		?>
-        <tr>
-        <td><?php echo $row['titulo'] ?></td>
-        <td><?php echo $row['tipo_publi'] ?></td>
-        <td><?php echo $row['size'] ?></td>
-				<td><?php echo $row['categoria'] ?></td>
-				<td><?php echo $row['editorial'] ?></td>
-				<td><?php echo $row['autor'] ?></td>
-				<td><?php echo $row['ubicacion'] ?></td>
-				<td><?php echo $row['lugar'] ?></td>
-				<td><?php echo $row['ano'] ?></td>
-				<td><?php echo $row['pagina'] ?></td>
-				<td><a href="uploads/<?php echo $row['file'] ?>" target="_blank" download>Descarga</a></td>
-        </tr>
-        <?php
+		<h4 class="text-center">Necesita permisos de administrador.</h4>
+		<?php
 	}
-	?>
-    </table>
-			<br>
-    </div>
-</div>
-
+		?>
+	    </table>
+				<br>
+	    </div>
+	</div>
 
 
 <!-- Script para ordenar los resultados -->

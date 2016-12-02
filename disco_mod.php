@@ -111,27 +111,33 @@ color: #0078FF;
 <!-- /.container -->
 </nav>
 
-<h2 class="text-center">Modificación de Archivos</h2>
-<h4 class="text-center">A continuación se muestra un listado de los archivos existentes. Seleccione uno para comenzar a modificar. Una vez seleccionado, cambie cualquier campo que desee y haga click en "Modificar".<h4>
+<?php
+	if($_SESSION['username']=='root'){
 
-	<div class="container">
-	  <h4 class="text-center">Recuerde que el campo "Categoría" tiene que tener los siguientes valores exactos, ya que sino, no van a aparecer en sus respectivas pestañas:</h4>
-	  <div class="panel panel-default">
+		?>
+		<h2 class="text-center">Modificación de Archivos</h2>
+		<h4 class="text-center">A continuación se muestra un listado de los archivos existentes. Seleccione uno para comenzar a modificar. Una vez seleccionado, cambie cualquier campo que desee y haga click en "Modificar".<h4>
 
-	    <div class="panel-body">Ciencia de la Legislación</div>
-	    <div class="panel-footer">Digesto</div>
-			<div class="panel-body">Ciencia política</div>
-			<div class="panel-footer">Gobierno digital</div>
-			<div class="panel-body">Informática Jurídica</div>
-			<div class="panel-footer">Derecho de la Informática</div>
-			<div class="panel-body">Informática Jurídica</div>
-			<div class="panel-footer">Teoría general de sistemas</div>
-			<div class="panel-body">Filosofía jurídica</div>
-			<div class="panel-footer">Lógica</div>
-			<div class="panel-body">Inteligencia artificial y Derecho</div>
-			<div class="panel-footer">Internet</div>
-	  </div>
-	</div>
+			<div class="container">
+				<h4 class="text-center">Recuerde que el campo "Categoría" tiene que tener los siguientes valores exactos, ya que sino, no van a aparecer en sus respectivas pestañas:</h4>
+				<div class="panel panel-default">
+
+					<div class="panel-body">Ciencia de la Legislación</div>
+					<div class="panel-footer">Digesto</div>
+					<div class="panel-body">Ciencia política</div>
+					<div class="panel-footer">Gobierno digital</div>
+					<div class="panel-body">Informática Jurídica</div>
+					<div class="panel-footer">Derecho de la Informática</div>
+					<div class="panel-body">Informática Jurídica</div>
+					<div class="panel-footer">Teoría general de sistemas</div>
+					<div class="panel-body">Filosofía jurídica</div>
+					<div class="panel-footer">Lógica</div>
+					<div class="panel-body">Inteligencia artificial y Derecho</div>
+					<div class="panel-footer">Internet</div>
+				</div>
+			</div>
+
+
 
 <?php
 
@@ -270,7 +276,13 @@ if ($_GET[id]) {
      }
 }
 
-?>
+}else{
+	?>
+	<h4 class="text-center">Necesita permisos de administrador.</h4>
+	<?php
+}
+	?>
+
 <br>
      </div>
 </div>

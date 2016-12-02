@@ -131,8 +131,10 @@
             $row = mysql_fetch_array($res);
             $_SESSION[registrado] = $row[cod_u];
   	$_SESSION['username'] = $row[nick_u];
-       } else                      {
-            $mensaje = '<br />nombre de usuario / contrasenia incorrectos<br /><br />';
+       } else{
+            ?>
+            <h4 class="text-center">Usuario o Contraseña incorrectos!</h4>
+            <?php  
        }
   }
 

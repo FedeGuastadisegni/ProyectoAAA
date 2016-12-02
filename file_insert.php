@@ -112,52 +112,65 @@ color: #0078FF;
 </nav>
 
 
-<?php?>
+<?php
+	if($_SESSION['username']=='root'){
+		?>
 
-<div id="band" class="container text-center">
-	<h3 class="text-center">Suba una foto.</h3>
-	<h4>Para subir una foto, primero seleccionela tocando el botón "Foto" y luego, agreguelé una descripción. Por último, haga click en el botón "Subir". </h4>
-</div>
-<form enctype="multipart/form-data" action=
-      "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-      <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+		<div id="band" class="container text-center">
+			<h3 class="text-center">Suba una foto.</h3>
+			<h4>Para subir una foto, primero seleccionela tocando el botón "Foto" y luego, agreguelé una descripción. Por último, haga click en el botón "Subir". </h4>
+		</div>
+		<form enctype="multipart/form-data" action=
+		      "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+		      <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
 
-      <table class="table table-bordered" style="width: 80%;">
-        <tr>
-          <td>Descripción que acompañará a la foto</td><td><input type="text" id="descr" name="descr" class="form-control"></td>
-        </tr>
-        <td>
-        <div class="fileUpload btn btn-success">
-            <span>Foto</span>
-            <input type="file" class="upload" name="userfile" />
-        </div>
-        <td>
-          <input type="submit" value="Subir" class="btn btn-primary" />
-        </td>
-      </table>
-      <!--<input name="userfile" type="file" />
-      <input type="text" id="descr" name="descr"/>-->
+		      <table class="table table-bordered" style="width: 80%;">
+		        <tr>
+		          <td>Descripción que acompañará a la foto</td><td><input type="text" id="descr" name="descr" class="form-control"></td>
+		        </tr>
+		        <td>
+		        <div class="fileUpload btn btn-success">
+		            <span>Foto</span>
+		            <input type="file" class="upload" name="userfile" />
+		        </div>
+		        <td>
+		          <input type="submit" value="Subir" class="btn btn-primary" />
+		        </td>
+		      </table>
+		      <!--<input name="userfile" type="file" />
+		      <input type="text" id="descr" name="descr"/>-->
 
-</form>
+		</form>
+		<?php
+		// check if a file was submitted
+		if(!isset($_FILES['userfile']))
+		{
+		    echo '<p class="text-center">No selecciono ninguna imagen</p>';
+		}
+		else
+		{
+		    try {
+		    $msg= upload();  //this will upload your image
+		    echo $msg;  //Message showing success or failure.
+		    }
+		    catch(Exception $e) {
+		    echo $e->getMessage();
+		    echo 'Sorry, could not upload file';
+		    }
+		}
+	}else{
+		?>
+		<h4 class="text-center">Necesita permisos de administrador.</h4>
+		<?php
+	}
+?>
+
+
+
 
 <?php
 
-// check if a file was submitted
-if(!isset($_FILES['userfile']))
-{
-    echo '<p class="text-center">No selecciono ninguna imagen</p>';
-}
-else
-{
-    try {
-    $msg= upload();  //this will upload your image
-    echo $msg;  //Message showing success or failure.
-    }
-    catch(Exception $e) {
-    echo $e->getMessage();
-    echo 'Sorry, could not upload file';
-    }
-}
+
 
 // the upload function
 
